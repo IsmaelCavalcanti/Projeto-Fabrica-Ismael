@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Canil</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="navbar">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'raca_lista' %}">Raças</a>
+        <a href="{% url 'cachorro_lista' %}">Cachorros</a>
+    </div>
+    <div class="container">
+        <h1>Gerenciamento</h1>
+        <p>Este sistema foi desenvolvido para voce gerenciar informações sobre os cachorros do seu canil</p>
+    </div>
+</body>
+</html>

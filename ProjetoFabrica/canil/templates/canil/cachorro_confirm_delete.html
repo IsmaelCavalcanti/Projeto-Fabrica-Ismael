@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excluir Cachorro</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Confirmar Exclusão</h1>
+        <p>Você tem certeza de que deseja excluir "{{ cachorro.nome }}"?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">Confirmar Exclusão</button>
+        </form>
+        <a href="{% url 'cachorro_lista' %}">Cancelar</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Cachorros</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="navbar">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'raca_lista' %}">Raças</a>
+        <a href="{% url 'cachorro_lista' %}">Cachorros</a>
+    </div>
+    <div class="container">
+        <h1>Lista de Cachorros</h1>
+        <ul>
+            {% for cachorro in cachorros %}
+                <li>
+                    <a href="{% url 'cachorro_detail' cachorro.pk %}">{{ cachorro.nome }} (Raça: {{ cachorro.raca.nome }})</a>
+                </li>
+            {% empty %}
+                <li>Nenhum cachorro cadastrado.</li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'cachorro_create' %}">Adicionar Novo Cachorro</a>
+    </div>
+</body>
+</html>
